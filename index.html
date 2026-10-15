@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#08080d">
+  <meta name="google-site-verification" content="IzYEE-NdKrDwnkoFzKnKNvKDAr4bayb17_s3XRAwKIo" />
   <meta name="description" content="الموقع الرسمي لقناة Vayro Gaming — ألعاب، تحديات، ولقطات حماسية.">
   <title>VAYRO — Gaming</title>
   <style>
@@ -125,7 +126,7 @@
 <body>
   <!--
     QUICK SETUP:
-    1) Replace YOUR_CHANNEL_HANDLE with your real YouTube handle, e.g. @YourChannel.
+    1) The Vayro channel link is already configured.
     2) In the video section script, replace the empty id values with YouTube video IDs.
        A video ID is the part after v= in a YouTube video URL.
   -->
@@ -137,7 +138,7 @@
         <a href="#videos">الفيديوهات</a>
         <a href="#community">تابعني</a>
       </nav>
-      <a class="btn btn-primary" id="navSubscribe" href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE" target="_blank" rel="noopener">▶ اشترك</a>
+      <a class="btn btn-primary" id="navSubscribe" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك</a>
     </div>
     <div class="rgb-line"></div>
   </div>
@@ -150,8 +151,8 @@
           <h1><span class="gradient-text">PLAY</span><br>YOUR WAY<span class="gradient-text">.</span></h1>
           <p>أهلاً بيك في عالم Vayro! ألعاب، تحديات، لحظات مضحكة وتجارب Gaming. حضّر روحك للمغامرة وخليك جزء من المجتمع.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" id="heroSubscribe" href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE" target="_blank" rel="noopener">▶ اشترك في القناة</a>
-            <a class="btn btn-outline" href="#videos">شوف الفيديوهات ↓</a>
+            <a class="btn btn-primary" id="heroSubscribe" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في القناة</a>
+            <a class="btn btn-outline" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw/videos" target="_blank" rel="noopener">شوف الفيديوهات ↓</a>
           </div>
         </div>
         <div class="hero-art" aria-label="شعار Vayro بتصميم RGB">
@@ -183,6 +184,7 @@
           <p>زيد روابط فيديوهاتك في الكود باش تظهر هنا مباشرة.</p>
         </div>
         <div class="cards" id="videoGrid"></div>
+        <div style="margin-top:22px"><a class="btn btn-primary" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw/videos" target="_blank" rel="noopener">▶ شاهد كل فيديوهات Vayro على يوتيوب</a></div>
         <p class="empty-note" id="videoNote">ملاحظة: الفيديوهات هنا تجريبية إلى أن تضيف معرّفات فيديوهات قناتك في ملف index.html.</p>
       </div>
     </section>
@@ -191,7 +193,7 @@
       <div class="wrap">
         <div class="cta">
           <div><div class="section-kicker">JOIN THE SQUAD</div><h2>ما تفوّت حتى فيديو جديد!</h2><p>اشترك في قناة Vayro وفعّل الجرس باش توصلك الفيديوهات الجديدة.</p></div>
-          <a class="btn btn-primary" id="bottomSubscribe" href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE" target="_blank" rel="noopener">▶ اشترك الآن</a>
+          <a class="btn btn-primary" id="bottomSubscribe" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك الآن</a>
         </div>
       </div>
     </section>
@@ -201,13 +203,14 @@
     <div class="wrap footer-inner">
       <a class="brand" href="#home"><span class="brand-mark">V</span><span>VAYRO</span></a>
       <span>© <span id="year"></span> Vayro Gaming. صنع بشغف 🎮</span>
-      <div class="social"><a id="footerYouTube" href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE" target="_blank" rel="noopener">YouTube ↗</a><a href="#home">للأعلى ↑</a></div>
+      <div class="social"><a id="footerYouTube" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw?sub_confirmation=1" target="_blank" rel="noopener">YouTube ↗</a><a href="#home">للأعلى ↑</a></div>
     </div>
   </footer>
 
   <script>
     // EDIT THIS: Put your actual YouTube channel handle here (without the @).
-    const CHANNEL_HANDLE = "YOUR_CHANNEL_HANDLE";
+    const CHANNEL_URL = "https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw";
+    const SUBSCRIBE_URL = CHANNEL_URL + "?sub_confirmation=1";
 
     // EDIT THIS: Replace each empty id with a YouTube video ID from your own channel.
     // Example URL: https://www.youtube.com/watch?v=abc123XYZ00 -> id is abc123XYZ00
@@ -217,10 +220,10 @@
       { id: "", title: "أفضل اللقطات", description: "أضف فيديو آخر من قناتك" }
     ];
 
-    const channelUrl = `https://www.youtube.com/@${CHANNEL_HANDLE}`;
+    const channelUrl = CHANNEL_URL;
     ["navSubscribe", "heroSubscribe", "bottomSubscribe", "footerYouTube"].forEach(id => {
       const el = document.getElementById(id);
-      el.href = channelUrl;
+      el.href = id === "footerYouTube" ? channelUrl : SUBSCRIBE_URL;
     });
 
     const grid = document.getElementById("videoGrid");
@@ -240,10 +243,10 @@
         </article>`).join("");
     } else {
       grid.innerHTML = videos.map((video, index) => `
-        <article class="video-card">
+        <a class="video-card" href="https://www.youtube.com/channel/UC6XAiDSTGMCxnvBUGlaySNw/videos" target="_blank" rel="noopener" aria-label="شاهد فيديوهات Vayro على يوتيوب">
           <div class="video-frame"><div class="play" aria-hidden="true">▶</div></div>
           <div class="video-info"><h3>${video.title}</h3><p>${video.description}</p></div>
-        </article>`).join("");
+        </a>`).join("");
     }
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
